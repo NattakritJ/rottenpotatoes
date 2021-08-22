@@ -54,7 +54,12 @@ html, body {
   table#movies tr:hover { 
     background-color: yellow;
   }
-  #notice, #warning {
+  #notice {
+    background: yellow;
+    margin: 1em 0;
+    padding: 4px;
+  }
+  #warning {
     background: rosybrown;
     margin: 1em 0;
     padding: 4px;
