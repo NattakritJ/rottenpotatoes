@@ -7,6 +7,8 @@
     = csrf_meta_tags
 
   %body
+    %h1
+      = link_to "RottenPotatoes", movies_path
     #main
     -# this goes just inside %body:
   - if flash[:notice]
