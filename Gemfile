@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.0'
 
+# auth
+gem 'devise'
+
 # use Haml for templates
 gem 'haml'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

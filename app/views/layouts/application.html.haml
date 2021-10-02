@@ -10,6 +10,13 @@
     %header
       %h1
         = link_to "RottenPotatoes", movies_path
+      #login
+    - if current_user
+      -# %p.welcome  Welcome, #{@current_user.name}!
+      = link_to 'Log Out', destroy_user_session_path, :method => :delete
+    - else
+      %p.login= link_to 'Sign in', new_user_session_path
+      %p.login= link_to 'Sign Up', new_user_registration_path
     #main
     -# this goes just inside %body:
   - if flash[:notice]
