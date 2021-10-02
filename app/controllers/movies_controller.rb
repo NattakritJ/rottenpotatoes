@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
-    def index
+  TMDb.api_key = '9e136fb4229626aa05f87796a4984291'  
+  def index
         @movies = Movie.all.order('title ASC')
     end
 
@@ -49,6 +50,17 @@ class MoviesController < ApplicationController
       redirect_to movies_path
     end
 
+    def search_tmdb
+      @search_params = params[:search_terms]
+      @search_params = " " if @search_params  == ""
+      @search = TMDb::Movie.search(@search_params)
+      if @search != []
+        render "search"
+      else
+        flash[:warning] = "'#{params[:search_terms]}' was not found in TMDb."
+        redirect_to movies_path
+      end
+    end
 
     private
       def movie_params
