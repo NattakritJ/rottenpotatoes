@@ -11,13 +11,15 @@ class ReviewsController < ApplicationController
         redirect_to movies_path
       end
     end
+
     public
     def new
-        unless current_user
-            redirect_to movie_path(@movie.id)
-        end
+      unless current_user
+          redirect_to movie_path(@movie.id)
+      end
       @review = @movie.reviews.build
     end
+
     def create
       # since user_id is a protected attribute that won't get
       # assigned by the mass-assignment from params[:review], we set it
@@ -27,8 +29,11 @@ class ReviewsController < ApplicationController
       
       redirect_to movie_path(@movie)
     end
+
     def edit
-        
+      unless current_user
+        redirect_to movie_path(@movie.id)
+      end
         @review = @movie.reviews.find params[:id]
     end
     
@@ -40,6 +45,7 @@ class ReviewsController < ApplicationController
         flash[:notice] = "Your review was successfully updated."
         redirect_to movie_path(@movie)
     end
+
     def destroy
       @review = @movie.reviews.find(params[:id])
       @review.destroy
@@ -47,6 +53,4 @@ class ReviewsController < ApplicationController
       redirect_to movie_path(@movie)
     end
     private
-
-    
   end

@@ -14,16 +14,15 @@
 = link_to 'Add Review', new_movie_review_path(@movie)
 %ul#details
   %li
-    Average potatoes:
-
-    - @movie.reviews.each do |review|
-      %tr
-      %td= review.potatoes
+    %tr Average potatoes:
+    %tr= @avg
 
   - @movie.reviews.each do |review|
     %tr
       %td name :
       %td= review.user.name
+      %td | score :
+      %td= review.potatoes
       %td | comments :
       %tr
         %td= review.comments
