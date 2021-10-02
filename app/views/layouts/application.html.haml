@@ -8,20 +8,20 @@
     
   %body
     %header
-      %h1
-        = link_to "RottenPotatoes", movies_path
+    %h1
+      = link_to "RottenPotatoes", movies_path
     - if flash[:notice]
       #notice.message= flash[:notice]
     - elsif flash[:warning]
       #warning.message= flash[:warning]
-      #login
     - if current_user
       %h3
         = "Welcome! #{current_user.name}"
-      = link_to 'Log Out', destroy_user_session_path, :method => :delete
+        = link_to 'Log Out', destroy_user_session_path, :method => :delete
     - else
-      %p.login= link_to "Sign in with GitHub", user_github_omniauth_authorize_path, method: :post
-      %p.login= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, method: :post
-    #main
-    -# this goes just inside %body:
+      %h3
+        = "sign in with :"
+        = link_to "GitHub", user_github_omniauth_authorize_path, method: :post
+        = " , "
+        = link_to "Google", user_google_oauth2_omniauth_authorize_path, method: :post
   = yield
