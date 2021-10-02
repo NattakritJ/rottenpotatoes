@@ -12,11 +12,12 @@
         = link_to "RottenPotatoes", movies_path
       #login
     - if current_user
-      -# %p.welcome  Welcome, #{@current_user.name}!
+      %h3
+        = current_user.email
       = link_to 'Log Out', destroy_user_session_path, :method => :delete
     - else
-      %p.login= link_to 'Sign in', new_user_session_path
-      %p.login= link_to 'Sign Up', new_user_registration_path
+      %p.login= link_to "Sign in with GitHub", user_github_omniauth_authorize_path, method: :post
+      %p.login= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path, method: :post
     #main
     -# this goes just inside %body:
   - if flash[:notice]
