@@ -5,6 +5,10 @@ ruby '3.0.0'
 
 # auth
 gem 'devise'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
+gem 'activerecord-session_store'
 
 # use Haml for templates
 gem 'haml'
