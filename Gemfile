@@ -11,6 +11,12 @@ gem "omniauth-rails_csrf_protection"
 gem 'activerecord-session_store'
 gem 'tmdb-api'
 
+# deploy
+gem 'capistrano', '~> 3.11'
+gem 'capistrano-rails', '~> 1.4'
+gem 'capistrano-passenger', '~> 0.2.0'
+gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+
 # use Haml for templates
 gem 'haml'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
@@ -52,6 +58,7 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
 end
 
 group :test do
@@ -60,6 +67,11 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem "rspec-rails"
+  gem 'rexml'
+  gem 'cucumber-rails'
+  gem 'database_cleaner'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
