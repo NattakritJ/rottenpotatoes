@@ -64,6 +64,7 @@
     <orderEntry type="library" scope="PROVIDED" name="cucumber-html-formatter (v16.0.1, ruby-2.5.9-p229) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber-messages (v17.1.1, ruby-2.5.9-p229) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber-rails (v2.4.0, ruby-2.5.9-p229) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="cucumber-rails-training-wheels (v1.0.0, ruby-2.5.9-p229) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber-tag-expressions (v3.0.1, ruby-2.5.9-p229) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="cucumber-wire (v6.1.1, ruby-2.5.9-p229) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="database_cleaner (v2.0.1, ruby-2.5.9-p229) [gem]" level="application" />
@@ -88,6 +89,7 @@
     <orderEntry type="library" scope="PROVIDED" name="i18n (v1.8.10, ruby-2.5.9-p229) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jbuilder (v2.11.2, ruby-2.5.9-p229) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jwt (v2.2.3, ruby-2.5.9-p229) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="launchy (v2.5.0, ruby-2.5.9-p229) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="listen (v3.6.0, ruby-2.5.9-p229) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.12.0, ruby-2.5.9-p229) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.7.1, ruby-2.5.9-p229) [gem]" level="application" />
