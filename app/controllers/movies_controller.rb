@@ -1,6 +1,5 @@
 class MoviesController < ApplicationController
     def index
-      # Tmdb.api_key = '9e136fb4229626aa05f87796a4984291'  
       @movies = Movie.all.order('title ASC')
     end
 
@@ -65,7 +64,6 @@ class MoviesController < ApplicationController
         redirect_to movies_path
       end
     end
-
 
     private
       def movie_params

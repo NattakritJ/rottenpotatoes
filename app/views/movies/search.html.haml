@@ -1,4 +1,4 @@
-+%h1 All Movies
+%h1 All Movies
 
 %h1 Search TMDb for a movie
 
@@ -33,5 +33,5 @@
       %td{:style => "text-align:center;"}= movie.fetch("vote_count")
       %td{:style => "text-align:center;"}= movie.fetch("release_date", "Upcoming")
       %td{:style => "text-align:center;"}= link_to 'Add new movie', movies_path(:movie => {:title => movie.fetch("title"),:release_date => movie.fetch("release_date", "2025-01-01"),:description => movie.fetch("overview"),:rating=>"PG"}) , :method => :post
-      
+ 
 = link_to 'Back to main menu', movies_path
