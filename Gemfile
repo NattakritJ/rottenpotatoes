@@ -11,6 +11,9 @@ gem "omniauth-rails_csrf_protection"
 gem 'activerecord-session_store'
 gem 'tmdb-api'
 
+#tmdb
+gem 'themoviedb'
+
 # deploy
 gem 'capistrano', '~> 3.11'
 gem 'capistrano-rails', '~> 1.4'
