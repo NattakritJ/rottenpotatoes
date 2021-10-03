@@ -10,6 +10,9 @@ gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
 gem 'activerecord-session_store'
 
+#tmdb
+gem 'themoviedb'
+
 # deploy
 gem 'capistrano', '~> 3.11'
 gem 'capistrano-rails', '~> 1.4'
