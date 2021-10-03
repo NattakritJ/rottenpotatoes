@@ -6,4 +6,12 @@ class Review < ActiveRecord::Base
     # can ALSO require that the referenced movie itself be valid
     #  in order for the review to be valid:
     validates_associated :movie
-  end
+
+    def Review_comments
+      "#{comments}"
+    end
+
+    def Review_scores
+        "#{potatoes}"
+    end
+end
