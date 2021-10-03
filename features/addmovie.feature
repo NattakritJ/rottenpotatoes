@@ -7,7 +7,7 @@ Scenario: Add a movie
   Given I am on the RottenPotatoes home page
   When I follow "Add new movie"
   Then I should be on the Create New Movie page
-  When I fill in "Title" with "Barbie"
+  When I fill in "Title" with "Ben10"
   And I select "G" from "Rating"
   And I press "Save Changes"
-  And I should see "Barbie"
+  And I should see "Ben10"
