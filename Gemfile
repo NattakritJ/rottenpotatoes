@@ -9,7 +9,6 @@ gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
 gem 'activerecord-session_store'
-gem 'tmdb-api'
 
 #tmdb
 gem 'themoviedb'
