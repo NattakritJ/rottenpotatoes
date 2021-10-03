@@ -1,4 +1,4 @@
-%h2 Edit Movie
+%h2 Edit Review for #{@movie.title}
 
 = form_tag movie_review_path(@movie,@review), :method => :put do
   = label :review, :potatoes, 'Potatoes'
