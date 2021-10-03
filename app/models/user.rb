@@ -31,4 +31,9 @@ class User < ApplicationRecord
       end
     end
   end
+
+  def User_email
+    "#{email}"
+  end
+
 end
