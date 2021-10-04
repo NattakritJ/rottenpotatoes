@@ -20,7 +20,10 @@ class MoviesController < ApplicationController
     end
 
     def new
-
+      unless current_user
+        flash[:warning] = 'You must be logged in to add a movie.'
+        redirect_to movies_path
+      end
     end
 
     def create
@@ -31,6 +34,10 @@ class MoviesController < ApplicationController
 
     def edit
       @movie = Movie.find params[:id]
+      unless current_user
+        flash[:warning] = 'You must be logged in to edit a movie.'
+        redirect_to movie_path(@movie.id)
+      end
     end
     
     def update

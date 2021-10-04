@@ -32,7 +32,9 @@
             = link_to 'Delete review', movie_review_path(@movie,review), :method => :delete
         
         <br>
-
-= link_to 'Edit info', edit_movie_path(@movie)
-= link_to 'Delete', movie_path(@movie), :method => :delete
-= link_to 'Back to movie list', movies_path
+- if current_user
+  = link_to 'Edit info', edit_movie_path(@movie)
+  = link_to 'Delete', movie_path(@movie), :method => :delete
+  = link_to 'Back to movie list', movies_path
+- else
+  = link_to 'Back to movie list', movies_path
