@@ -8,30 +8,55 @@
   = submit_tag 'Search TMDb'
   <br>
 = link_to 'Back to main menu', movies_path
-%table#movies
-  %thead
-    %tr
-      %th{:style => "width:5%;text-align:center;"} Index
-      %th{:style => "width:20%;text-align:center;"} Image
-      %th{:style => "width:25%;text-align:center;"} Movie Title
-      %th{:style => "width:10%;text-align:center;"} Average potatoes
-      %th{:style => "width:10%;text-align:center;"} Total vote count
-      %th{:style => "width:10%;text-align:center;"} Release Date
-      %th{:style => "width:10%;text-align:center;"} Add Movie
-
-  %tbody
-    - @result.each_with_index do |movie,index|
+- if current_user
+  %table#movies
+    %thead
       %tr
-      %td{:style => "text-align:center;"}= index+1
-      %td{:style => "text-align:center;"} 
-        -if (movie.fetch("poster_path"))
-          %img{:src => 'https://image.tmdb.org/t/p/w300' + movie.fetch("poster_path").to_s, :style => "width:50%;"}
-        -else
-          %img{:src => 'https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg', :style => "width:70%;"}
-      %td{:style => "text-align:center;"}= movie.fetch("title")
-      %td{:style => "text-align:center;"}= movie.fetch("vote_average")/2
-      %td{:style => "text-align:center;"}= movie.fetch("vote_count")
-      %td{:style => "text-align:center;"}= movie.fetch("release_date", "Upcoming")
-      %td{:style => "text-align:center;"}= link_to 'Add new movie', movies_path(:movie => {:title => movie.fetch("title"),:release_date => movie.fetch("release_date", "2025-01-01"),:description => movie.fetch("overview"),:rating=>"PG"}) , :method => :post
+        %th{:style => "width:5%;text-align:center;"} Index
+        %th{:style => "width:20%;text-align:center;"} Image
+        %th{:style => "width:25%;text-align:center;"} Movie Title
+        %th{:style => "width:10%;text-align:center;"} Average potatoes
+        %th{:style => "width:10%;text-align:center;"} Total vote count
+        %th{:style => "width:10%;text-align:center;"} Release Date
+        %th{:style => "width:10%;text-align:center;"} Add Movie
+
+    %tbody
+      - @result.each_with_index do |movie,index|
+        %tr
+        %td{:style => "text-align:center;"}= index+1
+        %td{:style => "text-align:center;"} 
+          -if (movie.fetch("poster_path"))
+            %img{:src => 'https://image.tmdb.org/t/p/w300' + movie.fetch("poster_path").to_s, :style => "width:50%;"}
+          -else
+            %img{:src => 'https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg', :style => "width:70%;"}
+        %td{:style => "text-align:center;"}= movie.fetch("title")
+        %td{:style => "text-align:center;"}= movie.fetch("vote_average")/2
+        %td{:style => "text-align:center;"}= movie.fetch("vote_count")
+        %td{:style => "text-align:center;"}= movie.fetch("release_date", "Upcoming")
+        %td{:style => "text-align:center;"}= link_to 'Add new movie', movies_path(:movie => {:title => movie.fetch("title"),:release_date => movie.fetch("release_date", "2025-01-01"),:description => movie.fetch("overview"),:rating=>"PG"}) , :method => :post
+- else
+  %table#movies
+    %thead
+      %tr
+        %th{:style => "width:5%;text-align:center;"} Index
+        %th{:style => "width:20%;text-align:center;"} Image
+        %th{:style => "width:25%;text-align:center;"} Movie Title
+        %th{:style => "width:10%;text-align:center;"} Average potatoes
+        %th{:style => "width:10%;text-align:center;"} Total vote count
+        %th{:style => "width:10%;text-align:center;"} Release Date
+
+    %tbody
+      - @result.each_with_index do |movie,index|
+        %tr
+        %td{:style => "text-align:center;"}= index+1
+        %td{:style => "text-align:center;"} 
+          -if (movie.fetch("poster_path"))
+            %img{:src => 'https://image.tmdb.org/t/p/w300' + movie.fetch("poster_path").to_s, :style => "width:50%;"}
+          -else
+            %img{:src => 'https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg', :style => "width:70%;"}
+        %td{:style => "text-align:center;"}= movie.fetch("title")
+        %td{:style => "text-align:center;"}= movie.fetch("vote_average")/2
+        %td{:style => "text-align:center;"}= movie.fetch("vote_count")
+        %td{:style => "text-align:center;"}= movie.fetch("release_date", "Upcoming")
  
 = link_to 'Back to main menu', movies_path
