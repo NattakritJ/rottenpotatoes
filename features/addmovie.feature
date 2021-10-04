@@ -10,4 +10,4 @@ Scenario: Add a movie
   When I fill in "Title" with "Ben10"
   And I select "G" from "Rating"
   And I press "Save Changes"
-  And I should see "Ben10"
+  And I should see "Details about Ben10"
